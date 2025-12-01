@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "sqlite": {
+      "command": "./toolbox",
+      "args": ["--tools-file","tools.yaml","--log-level=DEBUG", "--stdio"]
+    }
+  }
+}

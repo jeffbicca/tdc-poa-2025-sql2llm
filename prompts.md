@@ -1,0 +1,6 @@
+- Quantas faixas a Amy Winehouse tem?
+- Quantas faixas estão classificadas como Pop?
+- Qual é o artista que tem a maior quantidade de faixas?
+- Qual é o gênero que contém a maior quantidade de faixas?
+- Qual é o artista que tem a maior quantidade de invoices?
+- Qual é o álbum mais caro e de qual artista é?

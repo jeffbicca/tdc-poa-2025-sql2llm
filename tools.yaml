@@ -1,0 +1,25 @@
+sources:
+  chinook:
+    kind: "sqlite"
+    database: "./chinook.db"
+tools:
+  search-tracks-by-artist:
+    kind: sqlite-sql
+    source: chinook
+    description: >-
+      Busca por faixas a partir de um nome de um artista.
+    parameters:
+      - name: Artist
+        type: string
+        description: Nome do artista.
+    statement: SELECT * FROM tracks t INNER JOIN albums a ON t.AlbumId = a.AlbumId INNER JOIN artists ar ON a.ArtistId = ar.ArtistId WHERE LOWER(REPLACE(ar.Name, ' ', '')) LIKE '%' || LOWER(REPLACE(?, ' ', '')) || '%';
+  count-tracks-by-artist-or-genre:
+    kind: sqlite-sql
+    source: chinook
+    description: >-
+      Conta faixas a partir de um artista ou gênero.
+    statement: SELECT ar.name as ArtistName, g.name as GenreName, COUNT(*) FROM tracks t INNER JOIN albums a ON t.AlbumId = a.AlbumId INNER JOIN artists ar ON a.ArtistId = ar.ArtistId INNER JOIN genres g ON t.GenreId = g.GenreId GROUP BY ar.Name, g.Name ORDER BY COUNT(*) DESC;
+toolsets:
+  my-toolset:
+    - search-tracks-by-artist
+    - count-tracks-by-artist-or-genre
