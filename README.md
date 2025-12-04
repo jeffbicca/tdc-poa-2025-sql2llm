@@ -9,13 +9,17 @@ A base de dados a ser utilizada é a [Chinook](https://www.sqlitetutorial.net/sq
 - Demonstrar como utilizar o MCP Toolbox for Databases para criar um agente que responda a prompts a partir de uma base de dados "real".
 - Configurar e utilizar o VSCode com GitHub Copilot para desenvolver e testar a toolbox.
 - Explorar o uso de prompts e automações para se trabalhar com dados.
-- Escrever um client em JavaScript com LangChain para interagir com a toolbox.
+- Escrever um client em Python com LangGraph para interagir com a toolbox.
 
 ## Pré-requisitos
 
 - VSCode instalado ([Download](https://code.visualstudio.com/))
 - MCP Toolbox for Databases ([Download](https://github.com/googleapis/genai-toolbox/releases/))
 - Licença Github Copilot ativa
+
+## Pré-requisitos (API)
+
+- Python 3.9 (ou superior)
 
 ## Como subir o ambiente
 
@@ -28,3 +32,13 @@ A base de dados a ser utilizada é a [Chinook](https://www.sqlitetutorial.net/sq
 2. Execute os prompts propostos no chat do Github Copilot e vá testando as tools disponíveis.
 
     2.1. Como recomendação, desabilite todas as demais tools do VSCode e deixe apenas a do sqlite/MCP Toolbox ativa. Para isto, clique no botão "Configure tools" (ao lado do botão "Enviar" do chat) e deixe apenas a toolbox `sqlite` marcada. 
+
+## Como subir a API
+
+```sh
+cd api
+pip3 install -r requirements.txt
+python3 main.py main:app
+```
+
+Servidor ficará disponível na porta `8000`. Documentação da API em `http://localhost:8000/docs`.
