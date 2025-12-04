@@ -3,3 +3,4 @@
 chinook.db-shm
 chinook.db-wal
 toolbox
+__pycache__
